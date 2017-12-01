@@ -1,0 +1,28 @@
+Errors Found
+
+Circle.java
+
+* In the function scale() the variable radius should be 
+multiplied by the variable factor. Originally the function was 
+written so that radius and factor were added together instead of
+multiplied. The test simpleScale() caught this error.
+
+Circle1.java:
+
+* The intersects() function doesn't properly compare the absolute 
+values of the center coordinates and the radius. It originally
+used the less than comparator (<) but it should use the less than
+or equal to comparator (<=). My test called simpleIntersects()
+caught this error.
+
+Circle2.java:
+
+* In the constructor for Circle2 the x and y coordinate variables were in the wrong order. Originally the function read:
+	super(y,x,radius)
+instead of:
+	super(x,y,radius)
+The tests simpleMove() and simpleNegMove() caught this error.
+
+* The intersects() function followed the wrong logic to test if 
+the two circle were intersecting. I could sort of follow the formula that was trying to be used. The correct equation is:
+	(x1 - x2)^2 + (y1 - y2)^2 <= (r1 + r2)^2
