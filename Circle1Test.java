@@ -19,6 +19,7 @@ public class Circle1Test
    private Circle1 circle1;
    // ADDED: another Circle1 variable to test 
    private Circle1 circle2;  
+   private Circle1 circle3;  
 
 // 
 // Stuff you want to do before each test case
@@ -29,6 +30,7 @@ public void setup()
    System.out.println("\nTest starting...");
    circle1 = new Circle1(1,2,3);
    circle2 = new Circle1(4,5,6);
+   circle3 = new Circle1(9,9,1);
 }
 
 //
@@ -76,12 +78,21 @@ public void simpleScaling() {
 }
 
 //
-// ADDED: Test a simple intersection
+// ADDED: Test a simple intersection (true)
 //
 @Test
 public void simpleIntersect () {
    boolean doesIntersect = circle1.intersects(circle2);
    Assert.assertTrue(doesIntersect);
+}
+
+//
+// ADDED: Test a simple intersection (false)
+//
+@Test
+public void simpleIntersectFalse () {
+   boolean doesIntersect = circle1.intersects(circle3);
+   Assert.assertFalse(doesIntersect);
 }
 
 /*** NOT USED
